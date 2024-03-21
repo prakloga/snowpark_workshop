@@ -11,6 +11,6 @@ def hello(session: Session) -> DataFrame:
     
 
 if __name__ == "__main__":
-    session = Session.builder.configs(json.load(open("/Users/upatel/.snowsql/connection.json"))).create()
+    session = Session.builder.configs(json.load(open("/Users/pl157r/.snowsql/connection.json"))).create()
     print (hello (session).show())
 
