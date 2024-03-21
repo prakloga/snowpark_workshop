@@ -5,12 +5,12 @@ from snowflake.snowpark.functions import col
 import json
 
 def hello(session: Session) -> DataFrame:
-    df = session.table("demodb.dev.customers")
+    df = session.table("pl157r.snowpark.customers")
     cdf = df.groupBy("STATE").count()
     return df 
     
 
 if __name__ == "__main__":
-    session = Session.builder.configs(json.load(open("/Users/upatel/.snowsql/sfdemo.json"))).create()
+    session = Session.builder.configs(json.load(open("/Users/upatel/.snowsql/connection.json"))).create()
     print (hello (session).show())
 
